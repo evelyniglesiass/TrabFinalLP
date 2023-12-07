@@ -5,4 +5,6 @@ import com.example.deputados.Models.Deputado;
 
 public interface DeputadoRepository extends JpaRepository<Deputado, Long>{
 
+    Deputado findAllById(int id);
+
 }

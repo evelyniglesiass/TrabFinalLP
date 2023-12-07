@@ -20,8 +20,8 @@ public class ApiService {
 		
 	}
 
-	public String getEventos(Integer id) {
-		String url = "https://dadosabertos.camara.leg.br/api/v2/deputados/" + id.toString() + "/eventos";
+	public String getEventos() {
+		String url = "https://dadosabertos.camara.leg.br/api/v2/eventos";
 		ResponseEntity<String> responseEntity = restTemplate.getForEntity(url, String.class);
 		String responseBody = responseEntity.getBody();
 		
