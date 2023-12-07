@@ -11,3 +11,6 @@ export {listarDeputadosApi} from '../api/deputados/listar-deputados.api.js';
 
 // listar
 export {listarEventosApi} from '../api/eventos/listar-eventos.api.js';
+
+// excluir
+export { excluirInscricaoApi } from '../api/eventos/excluir-inscricao.api.js';

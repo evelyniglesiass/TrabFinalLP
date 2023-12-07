@@ -1,23 +1,15 @@
-import { useState } from "react";
-import { listarEventosApi } from "../../constants";
 import { toast } from "react-toastify";
+import { axiosInstance } from "../base/axiosInstance";
 
-export function useListarEventosApi(){
+export async function listarEventosApi(){
 
-    const [error] = useState();
+    try{
+        const response = await axiosInstance.get("/");
+        
+        return response.data;
+    } catch(error){
+        toast.error(error.response.data.message);
+        throw new Error(error.response.data.message)
 
-    async function listarEventos(){
-
-        try{
-            const response = await listarEventosApi();
-
-            return response
-        }
-        catch(errorApi){
-            toast.error(errorApi);
-        }
     }
-
-    return {listarEventos, error};
-
 }

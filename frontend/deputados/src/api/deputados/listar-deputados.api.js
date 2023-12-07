@@ -1,23 +1,15 @@
-import { useState } from "react";
-import { listarDeputadosApi } from "../../constants";
 import { toast } from "react-toastify";
+import { axiosInstance } from "../base/axiosInstance";
 
-export function useListarDeputadosApi(){
+export async function listarDeputadosApi(){
 
-    const [error] = useState();
+    try{
+        const response = await axiosInstance.get("/");
+        
+        return response.data;
+    } catch(error){
+        toast.error(error.response.data.message);
+        throw new Error(error.response.data.message)
 
-    async function listarDeputados(){
-
-        try{
-            const response = await listarDeputadosApi();
-
-            return response
-        }
-        catch(errorApi){
-            toast.error(errorApi);
-        }
     }
-
-    return {listarDeputados, error};
-
 }
