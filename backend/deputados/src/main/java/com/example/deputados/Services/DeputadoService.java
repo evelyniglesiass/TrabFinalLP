@@ -56,7 +56,7 @@ public class DeputadoService {
 		eveRepo.save(evento);
 		depRepo.save(deputado);
 
-		return new ResponseEntity<>("Inscrição realizada com sucesso", HttpStatus.OK);
+		return new ResponseEntity<>("Inscrição excluída com sucesso", HttpStatus.OK);
 	}
 
 	public List<Evento> listarInscricoes(int id) {
