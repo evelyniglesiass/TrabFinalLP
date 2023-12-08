@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useExcluirInscricao } from '../../hooks/eventos/excluirInscricao.hook';
 import Modal from 'react-modal';
-import { Link } from 'react-router-dom';
+import '../components/Modal.css';
 
 Modal.setAppElement("#root");
 
@@ -28,23 +28,23 @@ const ExcluirInscricao = ({inscricao}) => {
     }
 
     return (
-        <div >
-            <button onClick={openModal}>🗑️</button>
+        <div>
+            <button onClick={openModal} className='button'>Excluir</button>
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
-                contentLabel="Example Modal"
+                contentLabel="Modal excluir"
                 overlayClassName="modal-overlay"
                 className="modal-content">
 
 
-                <h2>Deseja excluir sua inscricao?</h2>                
+                <h2 className='titulo-modal'>Deseja excluir esta inscrição?</h2>                
                 <div>
                     <form >
 
                         <div>
-                            <button type='submit' onClick={onClick}>Sim</button>
-                            <button onClick={closeModal}>Cancelar</button>
+                            <button type='submit' onClick={onClick} className='button button-modal'>Sim</button>
+                            <button className='button button-modal' onClick={closeModal}>Cancelar</button>
                         </div>
 
                     </form>

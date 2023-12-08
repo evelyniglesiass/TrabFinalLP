@@ -5,7 +5,7 @@ import '../components/Modal.css';
 
 Modal.setAppElement("#root");
 
-const Inscricao = ({deputado}) => {
+const EditarInscricao = ({deputado}) => {
 
     const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -52,4 +52,4 @@ const Inscricao = ({deputado}) => {
     )
 }
 
-export default Inscricao
+export default EditarInscricao

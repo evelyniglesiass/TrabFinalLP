@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 import Inscricao from './Inscricao';
+import '../components/Modal.css';
 
 Modal.setAppElement("#root");
 
@@ -24,27 +25,26 @@ const Deputado = ({deputado}) => {
 
         setDeputadoTag((oldDeputadoTag) => ([...oldDeputadoTag,
 
-                                            <section>
-                                                <button onClick={openModal}>•••</button>
+                                        <div>
+                                            <button onClick={openModal} className='feed-items'>Deputado</button>
+                                            <Modal
+                                                isOpen={modalIsOpen}
+                                                onRequestClose={closeModal}
+                                                contentLabel="Modal Deputado"
+                                                overlayClassName="modal-overlay"
+                                                className="modal-content">
 
-                                                <Modal
-                                                    isOpen={modalIsOpen}
-                                                    onRequestClose={closeModal}
-                                                    contentLabel="Deputado"
-                                                    overlayClassName="modal-overlay"
-                                                    className="modal-content">
+                                                <h2 className='titulo-modal'>{deputado.nome}</h2>
+                                                <p>{deputado.siglaPartido}</p>
+                                                <p>{deputado.siglaUf}</p>
 
-                                                    <h1>{deputado.nome}</h1>
-                                                    <hr/>
-                                                    <p>{deputado.siglaPartido}</p>
-                                                    <p>{deputado.siglaUf}</p>
-
-                                                    <Link to={`/eventos/${deputado.id}`}>Ver eventos</Link>
+                                                <div>
                                                     <Inscricao deputado={deputado}/>
+                                                    <Link to={`/eventos/${deputado.id}`}>Ver eventos</Link>                                                    <button className='button button-modal'>Ver eventos</button>
+                                                </div>
 
-                                                </Modal>
-                                                
-                                            </section>
+                                            </Modal>
+                                        </div>
                                         ]))
     }, [deputado])
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Deputado from './Deputado';
 
 const Deputados = ({deputados}) => {
 
@@ -10,9 +11,11 @@ const Deputados = ({deputados}) => {
     
     deputados.forEach(d => {
       setDeputadosTag((oldDeputadosTag) => ([...oldDeputadosTag, 
-                                        <section>
-                                          <h3>{d.nome}</h3>
-                                        </section>
+                                                <section className='container-conteudo'>
+                                                <div className='centered-items'>
+                                                  <Deputado/>
+                                                </div>
+                                              </section>
                                     ]))
     });
 
@@ -20,6 +23,7 @@ const Deputados = ({deputados}) => {
 
   return (
     <div>
+      <h1 className= 'header'>Deputados</h1>
       {deputadosTag}
     </div>    
   )

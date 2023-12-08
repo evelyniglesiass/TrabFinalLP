@@ -1,0 +1,49 @@
+.modal-overlay{
+    background: rgba(0, 0, 0, 0.164);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content{
+    width: 90%;
+    max-width: 500px;
+    background-color: rgb(236, 236, 236);
+    padding: 29px;
+    border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.button-modal{
+    font-size: medium;
+    padding: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 8px;
+    float: left;
+}
+
+.inscricao{
+    margin-top: 20px;
+}
+
+.select-input{
+    width: 400px; 
+    padding: 8px; 
+    font-size: 16px; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    appearance: none; 
+    background-color: #fff; 
+}
+
+.select-input option {
+    padding: 8px; 
+    background-color: #fff; 
+    color: #000; 
+}

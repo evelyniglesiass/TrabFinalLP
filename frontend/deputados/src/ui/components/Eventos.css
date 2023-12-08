@@ -1,0 +1,27 @@
+.eventos{
+    text-align: left;
+    list-style: none;
+}
+
+.eventos:hover{
+    background-color: rgba(173, 171, 171, 0.121);
+    cursor: default;
+}
+
+.button{
+    background-color: #0c5e3d;
+    border: 0px;
+    color: rgb(236, 236, 236);
+    border-radius: 2px;
+    float: right;
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-right: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.button:hover{
+    background-color: #4a6d5f;
+    cursor: pointer;
+}
