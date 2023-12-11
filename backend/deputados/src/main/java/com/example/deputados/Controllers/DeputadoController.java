@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.deputados.Dto.DeputadoDTO;
+import com.example.deputados.Dto.EventoDTO;
 import com.example.deputados.Models.Deputado;
-import com.example.deputados.Models.Evento;
 import com.example.deputados.Services.DeputadoService;
 
 @RestController
@@ -22,7 +23,7 @@ public class DeputadoController {
     private DeputadoService depSer;
 
     @GetMapping("/listar")
-	public List<Deputado> listar()  {
+	public List<DeputadoDTO> listar()  {
 		return depSer.listar();
 	}
 
@@ -32,7 +33,7 @@ public class DeputadoController {
 	}
 
     @GetMapping("/inscricoes/{id}")
-	public List<Evento> listarInscricoes(@PathVariable int id)  {
+	public List<EventoDTO> listarInscricoes(@PathVariable int id)  {
 		return depSer.listarInscricoes(id);
 	}
 
@@ -44,6 +45,11 @@ public class DeputadoController {
     @PutMapping("/excluir/inscricao/{dep}/{eve}")
 	public ResponseEntity<?> excluirInscricao(@PathVariable int dep, @PathVariable int eve)  {
 		return depSer.excluirInscricao(dep, eve);
+	}
+
+	@PutMapping("/editar/inscricao/{dep}/{eve}/{eveNovo}")
+	public ResponseEntity<?> editarInscricao(@PathVariable int dep, @PathVariable int eve, @PathVariable int eveNovo)  {
+		return depSer.editarInscricao(dep, eve, eveNovo);
 	}
     
 }

@@ -2,28 +2,32 @@ import React, { useEffect, useState } from 'react'
 import ExcluirInscricao from './ExcluirInscricao';
 import EditarInscricao from '../components/EditarInscricao';
 import '../components/Eventos.css';
+import { useParams } from 'react-router-dom';
 
-const Eventos = ({eventos}) => {
+const Eventos = ({eventos, listar}) => {
 
   const [eventosTag, setEventosTag] = useState([]);
+  const { id } = useParams();
 
   useEffect(() => {
 
     setEventosTag([]);
     
-    eventos.forEach(e => {
-      setEventosTag((oldEventosTag) => ([...oldEventosTag, 
-                                        <section className='container-conteudo'>
-                                          <div className='centered-items'>
-                                            <div className='feed-items eventos'>
-                                              <h3>{e.descricaoTipo}</h3>
-                                              <EditarInscricao/>
-                                              <ExcluirInscricao/>
+    if (eventos) {
+      eventos.forEach(e => {
+        setEventosTag((oldEventosTag) => ([...oldEventosTag, 
+                                          <section className='container-conteudo'>
+                                            <div className='centered-items'>
+                                              <div className='feed-items eventos'>
+                                                <h3>{e.descricaoTipo}</h3>
+                                                <EditarInscricao id={id} evento={e} listar={listar}/>
+                                                <ExcluirInscricao id={id} evento={e} listar={listar}/>
+                                              </div>
                                             </div>
-                                          </div>
-                                        </section>
-                                    ]))
-    });
+                                          </section>
+                                      ]))
+      });
+    }
 
   }, [eventos])
 

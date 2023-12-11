@@ -6,7 +6,7 @@ import '../components/Modal.css';
 Modal.setAppElement("#root");
 
 // Component para excluir vagas
-const ExcluirInscricao = ({inscricao}) => {
+const ExcluirInscricao = ({id, evento, listar}) => {
 
     const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -23,13 +23,15 @@ const ExcluirInscricao = ({inscricao}) => {
     async function onClick(event){
         event.preventDefault();
 
-        await excluirInscricao(inscricao.id);
+        await excluirInscricao(id, evento.id);
         
+        closeModal()
+        listar()
     }
 
     return (
         <div>
-            <button onClick={openModal} className='button'>Excluir</button>
+            <button onClick={openModal} className='btn button button-modal'>Excluir</button>
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}

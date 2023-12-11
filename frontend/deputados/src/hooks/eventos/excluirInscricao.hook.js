@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
-import {excluirInscricaoApi } from "../../constants";
+import { excluirInscricaoApi } from "../../constants";
 
 export function useExcluirInscricao(){
 
     const [error] = useState();
 
-    async function excluirInscricao(inscricao){
+    async function excluirInscricao(dep, eve){
 
         try{
-            await excluirVagaApi(inscricao);
+            await excluirInscricaoApi(dep, eve);
         }
         catch(errorApi){
             toast.error(errorApi);

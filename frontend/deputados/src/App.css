@@ -13,6 +13,8 @@
   margin: 0px;
   color: rgb(236, 236, 236);
   box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 .feed-items{
@@ -37,7 +39,6 @@
   display: flex;
   justify-content: center;
   align-items: center; 
-  height: 100vh; 
 }
 
 .centered-items {

@@ -13,7 +13,13 @@ public class EventoService {
 		private EventoRepository eveRepo;
 		
 		public Evento criar(Evento evento) {
-			return eveRepo.save(evento);
+
+			if (eveRepo.existsById(evento.getId()) == false) {
+            	return eveRepo.save(evento);
+        	} else {
+				return evento;
+			}
+			
 		}
 
 }

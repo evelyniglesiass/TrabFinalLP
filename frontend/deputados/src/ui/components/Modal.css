@@ -28,6 +28,11 @@
     float: left;
 }
 
+.button-modal a {
+    text-decoration: none;
+    color: #fff;
+}
+
 .inscricao{
     margin-top: 20px;
 }

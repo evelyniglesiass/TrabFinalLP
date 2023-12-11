@@ -12,7 +12,6 @@ const Home = () =>{
         async function listar() {
     
           const response = await listarDeputados();
-          
           setDeputados(response) 
     
         }
@@ -22,7 +21,7 @@ const Home = () =>{
 
     return(
         <div>
-            <h1>Deputados</h1>
+            {/* <h1>Deputados</h1> */}
 
             <article>
                 <Deputados deputados={deputados}/>

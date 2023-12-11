@@ -4,7 +4,7 @@ import { axiosInstance } from "../base/axiosInstance";
 export async function listarDeputadosApi(){
 
     try{
-        const response = await axiosInstance.get("/");
+        const response = await axiosInstance.get("/deputados/listar");
         
         return response.data;
     } catch(error){

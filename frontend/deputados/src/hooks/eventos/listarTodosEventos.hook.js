@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { listarEventosApi } from "../../constants";
+import { listarTodosEventosApi } from "../../constants";
 import { toast } from "react-toastify";
 
-export function useListarEventos(){
+export function useListarTodosEventos(){
 
     const [error] = useState();
 
-    async function listarEventos(id){
+    async function listarTodosEventos(){
 
         try{
-            const response = await listarEventosApi(id);
+            const response = await listarTodosEventosApi();
 
             return response
         }
@@ -18,6 +18,6 @@ export function useListarEventos(){
         }
     }
 
-    return {listarEventos, error};
+    return {listarTodosEventos, error};
 
 }

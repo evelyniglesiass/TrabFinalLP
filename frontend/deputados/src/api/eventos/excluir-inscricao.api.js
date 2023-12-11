@@ -1,10 +1,10 @@
 import { toast } from "react-toastify";
 import { axiosInstance } from "../base/axiosInstance";
 
-export async function excluirInscricaoApi(inscricao){
+export async function excluirInscricaoApi(dep, eve){
 
     try{
-        const response = await axiosInstance.delete(`/inscricao/${inscricao}`);
+        const response = await axiosInstance.put(`/deputados/excluir/inscricao/${dep}/${eve}`);
 
         toast.success(response.data.mensagem)
         return response.data;

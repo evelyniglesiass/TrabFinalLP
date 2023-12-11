@@ -13,7 +13,7 @@ const Deputados = ({deputados}) => {
       setDeputadosTag((oldDeputadosTag) => ([...oldDeputadosTag, 
                                                 <section className='container-conteudo'>
                                                 <div className='centered-items'>
-                                                  <Deputado/>
+                                                  <Deputado deputado={d}/>
                                                 </div>
                                               </section>
                                     ]))
