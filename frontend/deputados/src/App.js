@@ -2,6 +2,8 @@ import './App.css';
 import Home from '.././src/ui/pages/Home';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import ListaEventos from '.././src/ui/pages/ListaEventos';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
           <Route path='/eventos/:id' element={<ListaEventos/>}/>
         </Routes>
       </BrowserRouter>
+
+      <ToastContainer />
     </div>
   );
 }

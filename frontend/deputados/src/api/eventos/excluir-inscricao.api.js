@@ -6,7 +6,7 @@ export async function excluirInscricaoApi(dep, eve){
     try{
         const response = await axiosInstance.put(`/deputados/excluir/inscricao/${dep}/${eve}`);
 
-        toast.success(response.data.mensagem)
+        toast.success(response.data)
         return response.data;
 
     } catch(error){

@@ -19,11 +19,11 @@ import lombok.Setter;
 @Setter
 public class Evento {
 
-    @Id
+	@Id
 	private Long id;
 	private String descricaoTipo;
 
 	@ManyToMany(mappedBy = "eventos", cascade = CascadeType.ALL)
 	private List<Deputado> deputados = new ArrayList<>();
-    
+
 }

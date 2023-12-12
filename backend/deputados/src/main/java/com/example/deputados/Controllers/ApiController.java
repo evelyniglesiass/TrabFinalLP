@@ -21,6 +21,7 @@ public class ApiController {
 
 	@Autowired
 	private ApiService apiService;
+
 	@Autowired
 	private DeputadoService depService;
 
@@ -36,7 +37,6 @@ public class ApiController {
 			Evento eve = new Gson().fromJson(jsonArray.get(i).toString(), Evento.class);
 
 			listdata.add(eve);
-
 		}
 
 		return listdata;

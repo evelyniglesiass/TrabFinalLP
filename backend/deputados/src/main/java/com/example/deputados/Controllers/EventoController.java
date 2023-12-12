@@ -23,5 +23,5 @@ public class EventoController {
     public Evento cadastrar(@RequestBody Evento evento) {
         return eveSer.criar(evento);
     }
-    
+
 }

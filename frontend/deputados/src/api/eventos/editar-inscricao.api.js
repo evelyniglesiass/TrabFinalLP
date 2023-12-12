@@ -6,7 +6,7 @@ export async function editarInscricaoApi(dep, eve, eveNovo){
     try{
         const response = await axiosInstance.put(`/deputados/editar/inscricao/${dep}/${eve}/${eveNovo}`);
 
-        toast.success(response.data.mensagem)
+        toast.success(response.data)
         return response.data;
 
     } catch(error){

@@ -24,12 +24,12 @@ public class DeputadoService {
 	@Autowired
 	private EventoRepository eveRepo;
 
-	public List<DeputadoDTO> listar() {
-		return DeputadoDTO.converterLista(depRepo.findAll());
-	}
-
 	public Deputado criar(Deputado deputado) {
 		return depRepo.save(deputado);
+	}
+
+	public List<DeputadoDTO> listar() {
+		return DeputadoDTO.converterLista(depRepo.findAll());
 	}
 
 	public Deputado listarPorId(int id) {
@@ -41,9 +41,9 @@ public class DeputadoService {
 		Deputado deputado = depRepo.findAllById(dep);
 		Evento evento = eveRepo.findAllById(eve);
 
-		if(deputado.getEventos().contains(evento)){
-			if(evento.getDeputados().contains(deputado)) {
-				return new ResponseEntity<>("Inscrição já existente", HttpStatus.OK);
+		if (deputado.getEventos().contains(evento)) {
+			if (evento.getDeputados().contains(deputado)) {
+				throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Inscrição já existente");
 			} else {
 				deputado.getEventos().add(evento);
 				evento.getDeputados().add(deputado);
@@ -59,7 +59,7 @@ public class DeputadoService {
 			depRepo.save(deputado);
 
 			return new ResponseEntity<>("Inscrição realizada com sucesso", HttpStatus.OK);
-		}	
+		}
 	}
 
 	public ResponseEntity<?> editarInscricao(int dep, int eve, int eveNovo) {
@@ -68,15 +68,19 @@ public class DeputadoService {
 		Evento evento = eveRepo.findAllById(eve);
 		Evento eventoNovo = eveRepo.findAllById(eveNovo);
 
-		if(deputado.getEventos().contains(evento)){
-			deputado.getEventos().remove(evento);
-			evento.getDeputados().remove(deputado);
-			deputado.getEventos().add(eventoNovo);
-			evento.getDeputados().add(deputado);
-			eveRepo.save(evento);
-			depRepo.save(deputado);
+		if (deputado.getEventos().contains(evento)) {
+			if (deputado.getEventos().contains(eventoNovo)) {
+				throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Inscrição já existente");
+			} else {
+				deputado.getEventos().remove(evento);
+				evento.getDeputados().remove(deputado);
+				deputado.getEventos().add(eventoNovo);
+				evento.getDeputados().add(deputado);
+				eveRepo.save(evento);
+				depRepo.save(deputado);
 
-			return new ResponseEntity<>("Inscrição realizada com sucesso", HttpStatus.OK);
+				return new ResponseEntity<>("Inscrição realizada com sucesso", HttpStatus.OK);
+			}
 		} else {
 			return new ResponseEntity<>("Inscrição não existe", HttpStatus.OK);
 		}

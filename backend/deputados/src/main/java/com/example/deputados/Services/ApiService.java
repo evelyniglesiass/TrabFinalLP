@@ -17,7 +17,6 @@ public class ApiService {
 		String responseBody = responseEntity.getBody();
 		
 		return responseBody;
-		
 	}
 
 	public String getEventos() {
@@ -26,7 +25,6 @@ public class ApiService {
 		String responseBody = responseEntity.getBody();
 		
 		return responseBody;
-		
 	}
 }
 

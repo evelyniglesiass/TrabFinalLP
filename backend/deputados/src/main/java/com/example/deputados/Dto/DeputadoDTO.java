@@ -19,9 +19,9 @@ import lombok.Setter;
 public class DeputadoDTO {
 
     private Long id;
-	private String nome;
-	private String siglaPartido;
-	private String siglaUf;
+    private String nome;
+    private String siglaPartido;
+    private String siglaUf;
 
     public DeputadoDTO(Deputado deputado) {
         this.id = deputado.getId();

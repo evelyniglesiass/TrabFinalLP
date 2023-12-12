@@ -3,7 +3,6 @@ package com.example.deputados.Dto;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.example.deputados.Models.Deputado;
 import com.example.deputados.Models.Evento;
 
 import lombok.AllArgsConstructor;
@@ -20,7 +19,7 @@ import lombok.Setter;
 public class EventoDTO {
 
     private Long id;
-	private String descricaoTipo;
+    private String descricaoTipo;
 
     public EventoDTO(Evento evento) {
         this.id = evento.getId();
@@ -30,5 +29,5 @@ public class EventoDTO {
     public static List<EventoDTO> converterLista(List<Evento> listaEvento) {
         return listaEvento.stream().map(EventoDTO::new).collect(Collectors.toList());
     }
-    
+
 }
