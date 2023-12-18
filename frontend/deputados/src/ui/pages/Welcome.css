@@ -1,0 +1,132 @@
+.html{
+    background-color: rgb(236, 236, 236);
+}
+
+.container {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+}  
+
+.header-welcome{
+    display: flex; 
+    align-items: center;
+    margin-top: 0px;
+    background-color: #0C5E3D;
+    margin-bottom: 20px;
+}
+
+.title-welcome{
+    padding-top: 25px;
+    margin-right: auto;
+    margin-top: 0px;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 40px;
+    font-size: 30px;
+    color: rgb(236, 236, 236);
+}
+
+.button-nav{
+    border: 0px;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(236, 236, 236);
+    margin-right: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+}
+
+.button-nav a{
+    border: 0px;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgb(236, 236, 236);
+    margin-right: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.button-nav:hover{
+    color: rgba(236, 236, 236, 0.755);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button-nav a:hover{
+    color: rgba(236, 236, 236, 0.755);
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* ---------------------------------------------------------- */
+
+.descricao{
+    margin-top: 120px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column; 
+}
+
+.title-descricao{
+    font-size: 50px;
+    text-align: right;
+    margin: 0px;
+    margin-top: 0px;
+    float: inline-end;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(33, 34, 33);
+}
+
+.button-welcome{
+    background-color: #0c5e3d;
+    border: 0px;
+    color: rgb(236, 236, 236);
+    font-size: 20px;
+    border-radius: 5px;
+    align-self: flex-end;
+    padding: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-right: 60px;
+    margin-top: 100px;
+    font-family: 'Roboto', sans-serif;
+    width: 250px;
+}
+
+.button-welcome a{
+    color: rgb(236, 236, 236);
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+.button-welcome:hover{
+    background-color: #4a6d5f;
+    cursor: pointer;
+}
+
+.button-welcome a:hover{
+    background-color: #4a6d5f;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.img-welcome{
+    width: 200px; 
+    height: auto;
+    margin-left: 10px; 
+    padding-right: 40px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.img-welcome-bottom{
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 950px;
+    height: auto;
+}

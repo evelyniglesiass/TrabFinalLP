@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import ExcluirInscricao from './ExcluirInscricao';
 import EditarInscricao from '../components/EditarInscricao';
 import '../components/Eventos.css';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import imgWelcome from '../pages/imgs/news-ilustration.png';
 
 const Eventos = ({eventos, listar}) => {
 
@@ -33,7 +34,12 @@ const Eventos = ({eventos, listar}) => {
 
   return (
     <div>
-      <h1 className= 'header'>Eventos</h1>
+      <div className= 'header-welcome'>
+        <h1 className= 'title-welcome'>Dados Abertos</h1>
+        <button className='button-nav'><Link to={"/deputados"}>Deputados</Link></button>
+        <button className='button-nav'><Link to={"/"}>Home</Link></button>
+        <img className='img-welcome' src={imgWelcome} alt='logo'/>
+      </div>
       {eventosTag}
     </div>    
   )
