@@ -44,7 +44,7 @@
     color: rgb(236, 236, 236);
     margin-right: 20px;
     font-family: 'Roboto', sans-serif;
-    font-size: 15px;
+    font-size: 20px;
     text-decoration: none;
 }
 
@@ -56,7 +56,7 @@
 
 .button-nav a:hover{
     color: rgba(236, 236, 236, 0.755);
-    font-size: 16px;
+    font-size: 21px;
     cursor: pointer;
     text-decoration: none;
 }
