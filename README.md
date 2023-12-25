@@ -12,10 +12,12 @@ Aplicação Web que utiliza a [API da Câmara de Deputados](https://dadosabertos
 
 ## Tecnologias utilizadas:
 
-* Spring Boot
 * Java
+* Spring Boot
 * MySQL
-* Javascript
-* React
+* JavaScript
+* ReactJS
+* Axios
 * HTML
 * CSS
+* Bootstrap
