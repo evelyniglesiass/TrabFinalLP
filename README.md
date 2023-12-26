@@ -9,7 +9,7 @@ Esse projeto é uma Aplicação Web que utiliza a [API da Câmara de Deputados](
 </div>
 <br>
 
-## 📋 Funcionalidades
+## 📋 Funcionalidades:
 
 - Consultar uma lista de Deputados
 - Inscrever um Deputado em um Evento (Listagem de Eventos feita através de um Select)
